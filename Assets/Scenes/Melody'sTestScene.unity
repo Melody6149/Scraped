@@ -1349,6 +1349,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8672735091974281100, guid: 48d1e74e30a25364dac52a69bdef3615,
         type: 3}
+      propertyPath: picturepieces.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672735091974281100, guid: 48d1e74e30a25364dac52a69bdef3615,
+        type: 3}
       propertyPath: picturepieces.Array.data[0]
       value: 
       objectReference: {fileID: 1426877290}
