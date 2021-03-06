@@ -25,6 +25,11 @@ public class PictureGrabingScript : MonoBehaviour
         _distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         _move = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _distanceToScreen));
         transform.position = new Vector3(_move.x, _move.y,0 ); // moves the object to the mouse
+
+        if (isGrabed == true)
+        {
+            gameObject.transform.Rotate(0, 0, Input.GetAxis("Mouse ScrollWheel"));
+        }
     }
     void OnMouseDown()
     {
@@ -32,6 +37,11 @@ public class PictureGrabingScript : MonoBehaviour
         Layers.GetComponent<PictureLayersScript>().oldZValue = transform.position.z;
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         Layers.GetComponent<PictureLayersScript>().ChangeOtherPictureLayers();
+
+        if(isGrabed == true)
+        {
+            gameObject.transform.Rotate(0, 0, Input.GetAxis("Mouse ScrollWheel"));
+        }
     }
     private void OnMouseUp()
     {
