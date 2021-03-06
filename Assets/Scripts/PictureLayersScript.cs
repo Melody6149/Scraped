@@ -11,10 +11,16 @@ public class PictureLayersScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        setUpPictureLayers();
+
+    }
+
+    private void setUpPictureLayers() // this function
+    {
         _zTransform = 0;
         for (int i = 0; i <= picturepieces.Capacity - 1; i++)
         {
-           picturepieces[i].transform.position = new Vector3(picturepieces[i].transform.position.x, picturepieces[i].transform.position.y, _zTransform);
+            picturepieces[i].transform.position = new Vector3(picturepieces[i].transform.position.x, picturepieces[i].transform.position.y, _zTransform);
             _zTransform++;
         }
     }
@@ -27,13 +33,11 @@ public class PictureLayersScript : MonoBehaviour
 
     public void ChangeOtherPictureLayers()
     {
-        //_zTransform = 1;
         for (int i = 0; i <= picturepieces.Capacity - 1; i++) 
         {
             if (picturepieces[i].transform.position.z < oldZValue && picturepieces[i].GetComponent<PictureGrabingScript>().isGrabed == false)
             {
                 picturepieces[i].transform.position = new Vector3(picturepieces[i].transform.position.x, picturepieces[i].transform.position.y,picturepieces[i].transform.position.z + 1);
-                //_zTransform++;
             }
         }
     }

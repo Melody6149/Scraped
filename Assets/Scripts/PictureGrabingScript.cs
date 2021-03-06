@@ -20,11 +20,11 @@ public class PictureGrabingScript : MonoBehaviour
     void Update()
     {
     }
-    void OnMouseDrag()
+    void OnMouseDrag() // this is called as long as the left mouse button is held down on the object
     {
         _distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         _move = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _distanceToScreen));
-        transform.position = new Vector3(_move.x, _move.y,0 );
+        transform.position = new Vector3(_move.x, _move.y,0 ); // moves the object to the mouse
     }
     void OnMouseDown()
     {
