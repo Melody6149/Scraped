@@ -5,12 +5,15 @@ using UnityEngine.EventSystems;
 
 public class PictureGrabingScript : MonoBehaviour
 {
-    private float distance_to_screen;
-    Vector3 move;
+    private float _distanceToScreen;
+    private Vector3 _move;
+    public GameObject Layers;
+    [HideInInspector]
+    public bool isGrabed;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,8 +22,19 @@ public class PictureGrabingScript : MonoBehaviour
     }
     void OnMouseDrag()
     {
-        distance_to_screen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        move = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance_to_screen));
-        transform.position = new Vector3(move.x, move.y,move.z);
+        _distanceToScreen = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        _move = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _distanceToScreen));
+        transform.position = new Vector3(_move.x, _move.y,0 );
+    }
+    void OnMouseDown()
+    {
+        isGrabed = true;
+        Layers.GetComponent<PictureLayersScript>().oldZValue = transform.position.z;
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        Layers.GetComponent<PictureLayersScript>().ChangeOtherPictureLayers();
+    }
+    private void OnMouseUp()
+    {
+        isGrabed = false;
     }
 }
