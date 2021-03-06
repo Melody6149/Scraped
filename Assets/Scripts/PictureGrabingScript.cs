@@ -30,7 +30,7 @@ public class PictureGrabingScript : MonoBehaviour
         if (isGrabed == true) //this allows the player to turn the object after picking it up
         {
             //based off the formula for the other bits of OnMouseDrag
-            _scroll = Input.mouseScrollDelta.x;
+            _scroll = Input.GetAxis("Mouse ScrollWheel");
             gameObject.transform.Rotate(0, 0, _scroll);
 
             //original formula
