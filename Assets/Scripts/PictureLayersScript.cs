@@ -31,7 +31,7 @@ public class PictureLayersScript : MonoBehaviour
         
     }
 
-    public void ChangeOtherPictureLayers()
+    public void ChangeOtherPictureLayers() // this function moves all other pieces back by 1 z value
     {
         for (int i = 0; i <= picturepieces.Capacity - 1; i++) 
         {
