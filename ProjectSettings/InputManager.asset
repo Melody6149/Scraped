@@ -134,12 +134,28 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Mouse ScrollWheel
+    m_Name: Mouse ScrollWheel Right
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
     altNegativeButton: 
+    altPositiveButton: right
+    gravity: 0
+    dead: 0
+    sensitivity: 0.1
+    snap: 0
+    invert: 0
+    type: 1
+    axis: 1
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Mouse ScrollWheel Left
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: left
     altPositiveButton: 
     gravity: 0
     dead: 0
@@ -147,7 +163,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 1
-    axis: 2
+    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: Horizontal
