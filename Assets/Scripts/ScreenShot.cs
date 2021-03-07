@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ScreenShot : MonoBehaviour
 {
@@ -8,15 +9,15 @@ public class ScreenShot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            ScreenCapture.CaptureScreenshot("ScreenShots/picture" + screenshot + ".png");
+            ScreenCapture.CaptureScreenshot("ScreenShots/" + DateTime.Now.ToString("MM,dd,yyyy HH/mm") +" Picture" + ".png");
             screenshot++;
             Debug.Log("saved");
         }
