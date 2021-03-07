@@ -13,6 +13,6 @@ public class randomscriptdonotcommit : MonoBehaviour
     // Update is called once per frame7
     void Update()
     {
-        gameObject.transform.Rotate(0,0,Input.GetAxis("Mouse ScrollWheel"));
+        
     }
 }
