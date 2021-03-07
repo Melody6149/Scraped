@@ -8,14 +8,14 @@ public class Slide : MonoBehaviour
     private Vector3 down;
     private Vector3 up;
     bool isThere = false;
-    float a = -9.18f;
+    float a = -14f;
 
     // Start is called before the first frame update
     void Start()
     {
         if (isThere == false)
         {
-            transform.position = new Vector3(2.27f, -9.18f, -7);
+            transform.position = new Vector3(7.41f, -14f, 27.01f);
         }
     }
 
@@ -24,9 +24,9 @@ public class Slide : MonoBehaviour
     {
         if (isThere == false)
         {
-            while (a < 0.64f)
+            while (a < -14f)
             {
-                transform.position = new Vector3(2.27f, a, -7);
+                transform.position = new Vector3(7.41f, a, 27.01f);
                 a = a + 0.01f;
             }
             isThere = true;
