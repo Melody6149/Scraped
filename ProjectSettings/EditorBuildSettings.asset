@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main menu.unity
     guid: 508d428e2e795b84aa2e5aea07040959
   - enabled: 1
-    path: Assets/Scenes/Melody'sTestScene.unity
+    path: Assets/Scenes/Game.unity
     guid: 4973d6e5794170646ba7184891807f8f
   m_configObjects: {}
